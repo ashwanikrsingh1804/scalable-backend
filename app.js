@@ -38,4 +38,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use(function (req, res) {
+  res.status(404).render('error');
+});
+
+
 module.exports = app;
