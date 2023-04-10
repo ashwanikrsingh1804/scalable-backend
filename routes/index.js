@@ -5,6 +5,10 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 const cors = require("cors");
 
+const corsOptions = {
+  origin: "*",
+}
+
 const db = mysql.createPool({
   host: "mdeicalbilling.c7dcqmwvm5db.us-east-1.rds.amazonaws.com",
   user: "admin",
@@ -12,7 +16,7 @@ const db = mysql.createPool({
   database: "medicalbilling",
 });
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
