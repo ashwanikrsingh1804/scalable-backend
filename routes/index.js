@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-router.get("api/get", function (req, res, next)  {
+router.get("/api/get", function (req, res, next)  {
   const sqlGet = "SELECT * FROM crud";
   db.query(sqlGet, (error, result) => {
     res.send(result);
