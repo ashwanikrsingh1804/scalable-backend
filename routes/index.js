@@ -6,7 +6,7 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "*",
+   'Access-Control-Allow-Origin' : "*",
 }
 
 const db = mysql.createPool({
