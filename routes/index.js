@@ -5,9 +5,7 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 const cors = require("cors");
 
-const corsOptions = {
-   'Access-Control-Allow-Origin' : "*",
-}
+
 
 const db = mysql.createPool({
   host: "mdeicalbilling.c7dcqmwvm5db.us-east-1.rds.amazonaws.com",
@@ -16,7 +14,13 @@ const db = mysql.createPool({
   database: "medicalbilling",
 });
 
-app.use(cors(corsOptions));
+app.use(cors());
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
