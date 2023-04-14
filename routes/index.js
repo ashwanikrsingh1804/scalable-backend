@@ -35,6 +35,10 @@ router.post("/api/post", function (req, res, next) {
   const sqlInsert =
     "INSERT INTO crud (name, email, contact) VALUES (?, ?, ?)";
   db.query(sqlInsert, [name, email, contact], (error, result) => {
+    console.log(result);
+    if(result){
+      res.send(result);
+    }
     if (error) {
       console.log(error);
     }
