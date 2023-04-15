@@ -31,7 +31,7 @@ router.get("/api/get", function (req, res, next)  {
 });
 
 router.post("/api/post", function (req, res, next) {
-  const { name, email, contact } = req.body;
+  const { name, email, contact, prescriptionId } = req.body;
   const sqlInsert =
     "INSERT INTO crud (name, email, contact, prescriptionId) VALUES (?, ?, ?, ?)";
   db.query(sqlInsert, [name, email, contact, prescriptionId], (error, result) => {
