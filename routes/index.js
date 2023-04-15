@@ -37,7 +37,7 @@ router.post("/api/post", function (req, res, next) {
   db.query(sqlInsert, [name, email, contact, prescriptionId], (error, result) => {
     console.log(result);
     if(result){
-      res.send(result);
+      res.status(201).json(result);
     }
     if (error) {
       console.log(error);
