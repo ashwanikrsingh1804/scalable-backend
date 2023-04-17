@@ -79,7 +79,7 @@ router.put("/api/update/:id", function(req, res, next)  {
   });
 
   router.get("/api/get/:customerId", function (req, res, next) {
-  const customerId = req.params.customerId; // Retrieve the customerId parameter from the URL
+  const {customerId} = req.params.customerId; // Retrieve the customerId parameter from the URL
   const sqlGet = "SELECT * FROM crud WHERE customer_id = ?"; // Modify the SQL query to include a WHERE clause for customer_id
   db.query(sqlGet, [customerId], (error, result) => {
     if (error) {
