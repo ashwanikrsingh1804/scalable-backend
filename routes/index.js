@@ -93,9 +93,9 @@ router.put("/api/update/:id", function(req, res, next)  {
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Ashwani' });
- });
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Ashwani' });
+//  });
 
 module.exports = router;
 
